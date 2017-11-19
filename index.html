@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Очки виртуальной реальности VR Box II</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <style>
+        @charset "UTF-8";a,article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}a,a:hover{text-decoration:none}.logo__text,caption,th{text-align:left}@font-face{font-family:helveticaneuecyrmedium,sans-serif;src:url(../fonts/helveticaneuecyr-medium-webfont.eot);src:url(../fonts/helveticaneuecyr-medium-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/helveticaneuecyr-medium-webfont.woff2) format('woff2'),url(../fonts/helveticaneuecyr-medium-webfont.woff) format('woff'),url(../fonts/helveticaneuecyr-medium-webfont.svg#helveticaneuecyrmedium) format('svg');font-weight:400;font-style:normal}@font-face{font-family:helveticaneuecyrroman,sans-serif;src:url(../fonts/helveticaneuecyr-roman-webfont.eot);src:url(../fonts/helveticaneuecyr-roman-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/helveticaneuecyr-roman-webfont.woff2) format('woff2'),url(../fonts/helveticaneuecyr-roman-webfont.woff) format('woff'),url(../fonts/helveticaneuecyr-roman-webfont.svg#helveticaneuecyrroman) format('svg');font-weight:400;font-style:normal}@font-face{font-family:qanelasbold;src:url(../fonts/qanelas-bold-webfont.eot);src:url(../fonts/qanelas-bold-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/qanelas-bold-webfont.woff2) format('woff2'),url(../fonts/qanelas-bold-webfont.woff) format('woff'),url(../fonts/qanelas-bold-webfont.ttf) format('truetype'),url(../fonts/qanelas-bold-webfont.svg#qanelasbold) format('svg');font-weight:400;font-style:normal}@font-face{font-family:qanelasmedium;src:url(../fonts/qanelas-medium-webfont.eot);src:url(../fonts/qanelas-medium-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/qanelas-medium-webfont.woff2) format('woff2'),url(../fonts/qanelas-medium-webfont.woff) format('woff'),url(../fonts/qanelas-medium-webfont.ttf) format('truetype'),url(../fonts/qanelas-medium-webfont.svg#qanelasmedium) format('svg');font-weight:400;font-style:normal}*{box-sizing:border-box}.container{max-width:1170px;padding-left:1.28%;padding-right:1.28%;margin:0 auto}p,ul{padding:0}blockquote,body,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,li,p,pre,td,textarea,th,ul{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}abbr,fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400}li,ul li{list-style:none}h1,h2,h3,h4,h5,h6{font-size:100%}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,select,textarea{font-family:inherit;font-size:inherit;font-weight:inherit}legend{color:#000}img{height:auto;max-width:100%}body{font-family:helveticaneuecyrroman,sans-serif;background:#fff;font-size:16px;line-height:1.2;-webkit-font-smoothing:antialiased}ul{margin:0}h1,h2,h3,h4,h5,h6{margin:0;font-weight:400}p{margin:0;font-family:helveticaneuecyrmedium,sans-serif}.header-inner,.header-promo{-ms-flex-wrap:wrap;margin-right:-1.282%}.contact,.logo__text{font-family:helveticaneuecyrroman,sans-serif}.header{position:relative;background:url(../img/bg/bg.jpg) center no-repeat fixed;background-size:cover}.header-top{background-color:rgba(0,0,0,.62);padding:14px 0}.header-inner{display:-webkit-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;margin-left:-1.282%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header__contact,.header__logo{box-sizing:border-box;margin-left:1.282%;margin-right:1.282%;word-wrap:break-word}.header__logo{width:72.436%}.header__contact{width:22.436%}.logo{font-size:20px;color:#fff;display:-moz-flex;display:-ms-flex;display:-o-flex;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.contact__link,.contact__num{display:inline-block;vertical-align:middle}.logo__link{margin-right:16px}.logo__text{font-size:20px}.contact{text-align:right}.contact__num{font-weight:700;color:#fff;font-size:24px}.contact__link{color:#94ca2d;font-size:21px;text-align:right;-webkit-transition:all .5s;transition:all .5s}.contact__link:hover{color:green}.header-main{padding-top:100px}.header-main::after{display:block;content:"";clear:both}.header-promo{display:-webkit-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;margin-left:-1.282%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.btn,.header__btn{color:#fff;text-transform:uppercase;cursor:pointer;line-height:1.333;text-align:center;display:inline-block;border-radius:3px;padding:19px 44px}.header-main__left,.header-main__right,.header-main__text{box-sizing:border-box;margin-left:1.282%;margin-right:1.282%;word-wrap:break-word}.header-main__text{width:97.436%}.header-main__right{width:39.10266667%;-ms-flex-item-align:start;align-self:flex-start}.header-main__left{width:47.436%}.header__title{font-size:39px;text-shadow:0 3px 0 #272b25;font-weight:700;margin-bottom:14px;color:#fff;width:64.10266667%}.header__slogan{-ms-flex-preferred-size:100%;flex-basis:100%;font-size:30px;color:#fff;margin-bottom:26px}.header__btn{background:#94ca2d;font-size:18px;font-weight:700;text-shadow:0 1px 2px #578f22;-webkit-transition:all .5s;transition:all .5s}.header__btn:hover{background:green;text-shadow:0 5px 5px #578f22;-webkit-transform:translateY(-3px);-ms-transform:translateY(-3px);transform:translateY(-3px)}.btn{text-shadow:0 1px 2px #578f22;background:#94ca2d;-webkit-transition:all .5s;transition:all .5s}.btn:hover{background:green;text-shadow:0 5px 5px #578f22;-webkit-transform:translateY(-3px);-ms-transform:translateY(-3px);transform:translateY(-3px)}
+        </style>
+        <link href="css/style.css" rel="stylesheet">
+        
+        <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46705248 = new Ya.Metrika({ id:46705248, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46705248" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109913127-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109913127-1');
+        </script>
+    </head>
+    <body>
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-inner">
+                        <div class="header__logo">
+                            <div class="logo">
+                                <a class="logo__link" href="#">
+                                    <img src="img/logo/VR.png" alt="logo">
+                                </a>
+                                <span class="logo__text">
+                                    Производство и продажа VR очков. <br>
+                                    Доставка по всей Украине.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="header__contact">
+                            <div class="contact">
+                                <a class="contact__num" href="#">
+                                    +380991045517
+                                </a>
+                                <a href="#" class="contact__link popup-btn">
+                                    Заказать звонок
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="container">
+                    <h1 class="header__title wow jackInTheBox">
+                    Очки виртуальной реальности
+                    VR Box II от производителя за 399 грн!
+                    </h1>
+                    <div class="header-promo">
+                        <div class="header-main__text">
+                            <p class="header__slogan">
+                                Бесплатная доставка по Киеву!
+                            </p>
+                            <a href="#" class="header__btn popup-btn btn wow fadeInLeft">
+                                Заказать vr box 2
+                            </a>
+                        </div>
+                        <div class="header-main__left">
+                            <div class="header__img vr wow fadeInLeft">
+                                <img  data-rellax-speed="1" src="img/pic/vrbox.png" alt="" class="pic">
+                            </div>
+                        </div>
+                        <div class="header-main__right">
+                            <div class="header__img dino wow fadeInRight">
+                                <img  data-rellax-speed="-1" src="img/pic/dino.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+        <!-- Whant VR -->
+        <section class="descr">
+            <div class="container">
+                <h2 class="section-title">
+                Что такое vr box 2
+                </h2>
+                <div class="descr__block">
+                    <div class="descr__block--left">
+                        <p class="section-descr">
+                            Это специальное устройство, в которое вставляется смартфон. Очки одеваются на голову и крепко фиксируются. С их помощью вы можете целиком погрузиться в мир виртуальной реальности в любом удобном для вас месте. С очками можно: смотреть 3D фильмы, играть в игры,
+                            Смотреть любые видео с YouTube и многое другое!
+                        </p>
+                        <div class="descr__lists">
+                            <div class="descr__list">
+                                <p class="descr__list__title">
+                                    Комплектация 1:
+                                </p>
+                                <ul class="list">
+                                    <li>Очки VR Box 2</li>
+                                    <li>Ремешок для крепления на голову</li>
+                                    <li>Ткань для очистки линз
+                                    </li>
+                                    <li>Инструкция
+                                    </li>
+                                </ul>
+                                <p class="descr__list__price">
+                                    Цена без пульта: <span>
+                                        399 грн.
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="descr__list">
+                                <p class="descr__list__title">
+                                    Комплектация 2:
+                                </p>
+                                <ul class="list">
+                                    <li>Очки VR Box 2</li>
+                                    <li>Ремешок для крепления на голову</li>
+                                    <li>Ткань для очистки линз
+                                    </li>
+                                    <li>Инструкция
+                                    </li>
+                                    <li class="bold">Пульт дистанционного управления
+                                    </li>
+                                </ul>
+                                <p class="descr__list__price">
+                                    Цена с пультом: <span>
+                                        499 грн.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="descr__block--right">
+                        <div class="descr__pic wow slideInRight">
+                            <img src="img/pic/vr-pic.png" alt="">
+                        </div>
+                    </div>
+                    <a href="#" class="descr__btn popup-btn btn wow fadeInLeft">
+                        выбрать комплектацию и Заказать vr box 2
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Whant VR end-->
+        <!-- Facilities -->
+        <section class="facilities">
+            <div class="container">
+                
+                <div class="facilities-items">
+                    
+                    <div class="facilities-pic wow fadeInLeft">
+                        <img src="img/pic/ironman.png" alt="">
+                    </div>
+                    <div class="facilities-descr">
+                        <img src="img/icons/movie.png" alt="">
+                        <h3>
+                        Просмотр фильмов, сериалов и видео на Youtube
+                        </h3>
+                        <p>
+                            В совершенно новом формате 3D, как перед
+                            6-ти метровым экраном! Также просмотр любых фильмов в формате 2D!
+                        </p>
+                    </div>
+                </div>
+                <div class="facilities-items facilities-items--reverse">
+                    <div class="facilities-pic wow fadeInRight">
+                        <img src="img/pic/iphone.png" alt="">
+                    </div>
+                    <div class="facilities-descr">
+                        <img src="img/icons/world.png" alt="">
+                        <h3>
+                        Путешествия по миру с помощью
+                        панорамного изображения!
+                        </h3>
+                        <p>
+                            А также тест драйв автомобилей,
+                            погружение на дно океана, полеть в космос, виртуальный секс и многое другое.
+                        </p>
+                    </div>
+                </div>
+                <!-- Rellax effect -->
+                <div class="rellax" data-rellax-speed="2" data-rellax-zindex="5">
+                    <img src="img/effects/06.png" alt="">
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- Facilities end -->
+        <!-- Promo -->
+        <section class="promo">
+            <div class="container">
+                <h3 class="promo-title title">
+                Закажите VR BOX II <br> прямо сейчас
+                </h3>
+                <div class="promo-inner">
+                    <div class="promo-inner__left wow fadeInLeft">
+                        
+                        <p class="promo-features">
+                            Только мы сотрудничаем с производителем  и осуществляем прямые поставки производства.
+                        </p>
+                        <ul class="promo-list">
+                            <li class="promo-list__item">
+                                <img src="img/icons/bag.png" alt="">
+                                <span>Быстрая доставка и оплата при получении!</span>
+                            </li>
+                            <li class="promo-list__item">
+                                <img src="img/icons/watch.png" alt="">
+                                <span>Принимаем заявки 24 часа в сутки! 7 дней в неделю!</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="promo-inner__right wow fadeInRight">
+                        <div class="promo-form page-form">
+                            <h3 class="form-title">
+                            Введите ваши данные и нажмите заказать
+                            </h3>
+                            <form action="#" class="form">
+                                <input class="form-input" type="text" placeholder="Введите имя">
+                                <input class="form-input form-phone" type="tel" placeholder="Введите телефон" >
+                                <input type="submit" class="btn form-btn" value="Заказать vr box 2">
+                                <p>* Перезвоним в течении 10 минут</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Promo end -->
+        <!-- Facilities 2 -->
+        <section class="facilities facilities-second">
+            <div class="container">
+                <div class="facilities-items">
+                    <div class="facilities-pic wow fadeInLeft">
+                        <img src="img/pic/extreme.png" alt="">
+                    </div>
+                    <div class="facilities-descr">
+                        <img src="img/icons/ball.png" alt="">
+                        <h3>
+                        Симуляция экстремальных видов спорта
+                        </h3>
+                        <p>
+                            Почувствуйте на себе эмоции от прыжка  с парашютом или спуска на сноуборде со склона горы!
+                        </p>
+                    </div>
+                </div>
+                <div class="facilities-items facilities-items--reverse">
+                    <div class="facilities-pic wow fadeInRight">
+                        <img src="img/pic/asasin.png" alt="">
+                    </div>
+                    <div class="facilities-descr">
+                        <img src="img/icons/joypad.png" alt="">
+                        <h3>
+                        Играйте в игры с эффектом  полного погружения! !
+                        </h3>
+                        <p>
+                            Полное погружение в игры на смартфоне,  а так же на ПК через программу TRINUS
+                        </p>
+                    </div>
+                    <!-- Rellax effect -->
+                    <div class="rellax" data-rellax-speed="1" data-rellax-zindex="5">
+                        <img src="img/effects/02.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Facilities 2 end -->
+        <!-- Work -->
+        <section class="work">
+            <div class="container">
+                <h3 class="title work-title">
+                Как это работает
+                <span></span>
+                </h3>
+                <ul class="work-list">
+                    <li class="work-item wow fadeInDown">
+                        <img src="img/pic/01.png" alt="">
+                        <span class="work-num">1</span>
+                        <p class="work-descr">Скачай на смартфон  приложения, игры, фильмы. </p>
+                    </li>
+                    <li class="work-item wow fadeInUp">
+                        <img src="img/pic/02.png" alt="">
+                        <span class="work-num">2</span>
+                        <p class="work-descr">Вставь смартфон в очки  виртуальной реальности. </p>
+                    </li>
+                    <li class="work-item wow fadeInDown">
+                        <img src="img/pic/03.png" alt="">
+                        <span class="work-num">3</span>
+                        <p class="work-descr">Наслаждайся абсолютно  непередаваемыми эмоциями. </p>
+                    </li>
+                    <li class="work-item wow fadeInUp">
+                        <img src="img/pic/04.png" alt="">
+                        <span class="work-num">4</span>
+                        <p class="work-descr">Управляй виртуальной  реальностью bluetooth-пультом.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Work end -->
+        <!-- Compatibility -->
+        <section class="compatibility">
+            <div class="container">
+                
+                <h3 class="title compatibility-title">
+                Совместимость очков
+                </h3>
+                <div class="compatibility__inner">
+                    
+                    <div class="compatibility-img wow fadeInRight">
+                        <img src="img/pic/vr-capab.png" alt="">
+                        <p>VR BOX-2 подойдет для любой модели смартфона  с диагональю экрана!</p>
+                    </div>
+                    <ul class="phones wow fadeInLeft">
+                        <li class="phone">
+                            <img src="img/pic/ios.png" alt="img">
+                            <p>ios</p>
+                        </li>
+                        <li class="phone">
+                            <img src="img/pic/htc_one.png" alt="img">
+                            <p>android</p>
+                        </li>
+                        <li class="phone">
+                            <img src="img/pic/Windows-10.png" alt="img">
+                            <p>windows</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Compatibility end -->
+        
+        <!-- Page-video -->
+        <section class="page-video">
+            <div class="container">
+                <h3 class="title page-video__title">Виртуальная реальность <br> в очках vr box</h3>
+                <a href="https://youtu.be/bK75LhCOygk" class="page-video__play mediabox">
+                    <img src="img/logo/play.png" alt="logo">
+                    Смотреть видео
+                </a>
+            </div>
+        </section>
+        <!-- Page-video end -->
+        
+        <!-- Apps -->
+        <section class="apps">
+            <div class="container">
+                <h3 class="work-title title apps-title">
+                Более 100 игр и приложений для VR BOX II
+                <span></span>
+                </h3>
+                <div class="apps-icons wow fadeInUp">
+                    <img src="img/logo/logos.png" alt="">
+                </div>
+                <ul class="apps-list">
+                    <li class="apps-item wow fadeInUp">
+                        <div class="apps-pic">
+                            <img src="img/pic/app01.png" alt="">
+                        </div>
+                        <h4 class="apps-title">
+                        Titans of Space
+                        </h4>
+                        <p class="apps-descr">
+                            Бесплатное приложение «Titans of Space» позволит вам совершить виртуальную поездку по нашей солнечной системе. При этом вы получите много интересной информации о небесных телах.
+                        </p>
+                    </li>
+                    <li class="apps-item wow fadeInUp">
+                        <div class="apps-pic">
+                            <img src="img/pic/app02.png" alt="">
+                        </div>
+                        <h4 class="apps-title">
+                        Zombie Shooter
+                        </h4>
+                        <p class="apps-descr">
+                            Одна из популярных игр «Zombie Shooter VR» В ней вы истребляете полчища зомби, исследуете темные пещеры и заброшенные шахты.
+                        </p>
+                    </li>
+                    <li class="apps-item wow fadeInUp">
+                        <div class="apps-pic">
+                            <img src="img/pic/app03.png" alt="">
+                        </div>
+                        <h4 class="apps-title">
+                        Sisters
+                        </h4>
+                        <p class="apps-descr">
+                            Игра «Sisters» имеет форму интерактивного фильма ужасов для Android-устройств: вы находитесь в гостиной, где можете осмотреться. При этом вокруг вас происходят странные вещи.
+                        </p>
+                    </li>
+                </ul>
+                <a href="#" class="btn popup-btn apps-btn wow bounceIn">
+                    Заказать vr box 2
+                </a>
+            </div>
+        </section>
+        <!-- Apps end-->
+        <!-- Feeback -->
+        <section class="feedback">
+            <div class="container">
+                <h3 class="work-title feedback-title title">
+                Отзывы довольных клиентов
+                <span></span>
+                </h3>
+                <ul class="feedback-list wow fadeInUp">
+                    <li class="feedback-item">
+                        <div class="feedback-img">
+                            <img src="img/pic/people01.png" alt="">
+                        </div>
+                        <p class="feedback-descr">
+                            Дмитрий Фомин. 30 лет <br> г. Харьков
+                        </p>
+                        <p class="feedback-text">
+                            Пришло очень быстро! Сами очки отличного качества, сразу же опробывал на Самсунг С6 эдж. Всё отлично работает, смарт тянет хорошо. В ПлэйМаркет просто ищешь приложения с VR и всё. Джойстик подключил по блютус. Качество отличное на мой взгляд! Виртуальная реальность это круто!!!
+                        </p>
+                    </li>
+                    <li class="feedback-item">
+                        <div class="feedback-img">
+                            <img src="img/pic/people01.png" alt="">
+                        </div>
+                        <p class="feedback-descr">
+                            Дмитрий Фомин. 30 лет <br> г. Харьков
+                        </p>
+                        <p class="feedback-text">
+                            Пришло очень быстро! Сами очки отличного качества, сразу же опробывал на Самсунг С6 эдж. Всё отлично работает, смарт тянет хорошо. В ПлэйМаркет просто ищешь приложения с VR и всё. Джойстик подключил по блютус. Качество отличное на мой взгляд! Виртуальная реальность это круто!!!
+                        </p>
+                    </li>
+                    <li class="feedback-item">
+                        <div class="feedback-img">
+                            <img src="img/pic/people01.png" alt="">
+                        </div>
+                        <p class="feedback-descr">
+                            Дмитрий Фомин. 30 лет <br> г. Харьков
+                        </p>
+                        <p class="feedback-text">
+                            Пришло очень быстро! Сами очки отличного качества, сразу же опробывал на Самсунг С6 эдж. Всё отлично работает, смарт тянет хорошо. В ПлэйМаркет просто ищешь приложения с VR и всё. Джойстик подключил по блютус. Качество отличное на мой взгляд! Виртуальная реальность это круто!!!
+                        </p>
+                    </li>
+                    <li class="feedback-item">
+                        <div class="feedback-img">
+                            <img src="img/pic/people01.png" alt="">
+                        </div>
+                        <p class="feedback-descr">
+                            Дмитрий Фомин. 30 лет <br> г. Харьков
+                        </p>
+                        <p class="feedback-text">
+                            Пришло очень быстро! Сами очки отличного качества, сразу же опробывал на Самсунг С6 эдж. Всё отлично работает, смарт тянет хорошо. В ПлэйМаркет просто ищешь приложения с VR и всё. Джойстик подключил по блютус. Качество отличное на мой взгляд! Виртуальная реальность это круто!!!
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Feeback end-->
+        <!-- Work -->
+        <section class="method">
+            <div class="container">
+                <h3 class="work-title method-title">
+                Как мы работаем
+                <span></span>
+                </h3>
+                <ul class="method-list wow fadeInUp">
+                    <li class="method-item">
+                        <img src="img/pic/work01.png" alt="">
+                        <p class="method-descr">
+                            Вы оставляете заявку на нашем сайте либо по телефону:
+                            +380991045517
+                        </p>
+                    </li>
+                    <li class="method-item">
+                        <img src="img/pic/work02.png" alt="">
+                        <p class="method-descr">
+                            Мы связываемся с вами,
+                            подтверждаем ваш заказ.
+                        </p>
+                    </li>
+                    <li class="method-item">
+                        <img src="img/pic/work03.png" alt="">
+                        <p class="method-descr">
+                            Мы организовываем доставку
+                            по всей Украине либо вы забираете самовывозом.(возможно только в Киеве)
+                        </p>
+                    </li>
+                    <li class="method-item">
+                        <img src="img/pic/work04.png" alt="">
+                        <p class="method-descr">
+                            Вы оплачиваете заказ  при получении.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Work end -->
+        <!-- Promo-2 -->
+        <section class="promo promo-2">
+            <div class="container">
+                <h3 class="promo-title title">
+                Закажите VR BOX II <br> прямо сейчас
+                </h3>
+                <div class="promo-inner">
+                    <div class="promo-inner__left wow fadeInLeft">
+                        
+                        <p class="promo-features">
+                            Только мы сотрудничаем с производителем  и осуществляем прямые поставки производства.
+                        </p>
+                        <ul class="promo-list">
+                            <li class="promo-list__item">
+                                <img src="img/icons/bag.png" alt="">
+                                <span>Быстрая доставка и оплата при получении!</span>
+                            </li>
+                            <li class="promo-list__item">
+                                <img src="img/icons/watch.png" alt="">
+                                <span>Принимаем заявки 24 часа в сутки! 7 дней в неделю!</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="promo-inner__right wow fadeInRight">
+                        <div class="promo-form page-form">
+                            <h3 class="form-title">
+                            Введите ваши данные и нажмите заказать
+                            </h3>
+                            <form action="#" class="form">
+                                <input class="form-input form-name" type="text" placeholder="Введите имя" required="">
+                                <input class="form-input form-phone" type="tel" placeholder="Введите телефон" required="">
+                                <input type="submit" class="btn form-btn" value="Заказать vr box 2">
+                                <p>* Перезвоним в течении 10 минут</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Promo-2 end -->
+        <!-- Contact -->
+        <section class="contacts">
+            <div class="container">
+                <h3 class="contacts-title title wow fadeinLeft">
+                Остались вопросы?
+                </h3>
+                <div class="contacts-links">
+                    <a href="#" class="popup-btn contacts-link wow fadeInUp">
+                        Задайте их нашему менеджеру
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header__logo">
+                        <div class="logo">
+                            <a class="logo__link" href="#">
+                                <img src="img/logo/VR.png" alt="logo">
+                            </a>
+                            <span class="logo__text">
+                                Производство и продажа VR очков. <br>
+                                Доставка по всей Украине.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="header__contact">
+                        <div class="contact">
+                            <a class="contact__num" href="#">
+                                +380991045517
+                            </a>
+                            <a href="#" class="contact__link popup-btn">
+                                Заказать звонок
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end-->
+        <!-- popup -->
+        <div class="popup ">
+            <div class="popup-window">
+                <div class="popup-contetn">
+                    <div class=" page-form popup-form wow flipInY">
+                        <a href="#" class="popup-close"> &times </a>
+                        <h3 class="form-title popup-title">
+                        Введите ваши данные и нажмите заказать
+                        </h3>
+                        <form action="forms/mailer/smart.php" method="POST" class="form">
+                            <input class="form-input" name="username" type="text" placeholder="Введите имя" required="">
+                            <input class="form-input form-phone" name="phone" type="tel" placeholder="Введите телефон" required="" >
+                            <select class="form-input form-select" name="select" id="select">
+                                <option value="С Bluetooch пультом">С Bluetooch пультом</option>
+                                <option value="С Bluetooch без пульта">
+                                    С Bluetooch без пульта
+                                </option>
+                            </select>
+                            <input onclick="yaCounter46705248.reachGoal('order'); return true;" type="submit" class="btn form-btn" value="Заказать vr box 2">
+                            <p>* Перезвоним в течении 10 минут</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- popup end -->
+        <!-- TO top arrow -->
+        <a href="#top" ID = "toTop"> ^ Наверх </a>
+        <!-- TO top arrow end -->
+        <!-- JS ALL libs -->
+        <script src="js/libs.js"></script>
+        <!-- JS files -->
+        <!-- <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/mediabox.js"></script>
+        <script src="js/rellax.min.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
+        <script src="js/custom.js"></script> -->
+        
+    </body>
+</html>
