@@ -1,0 +1,161 @@
+/* Header */
+
+.header {
+	position: relative;
+	background: url('../img/bg/bg.jpg') no-repeat center;
+	background-attachment: fixed;
+	background-size: cover;
+
+	.xs-block({
+		background: url(../img/bg/bg-mobile.jpg) no-repeat center center;
+					-webkit-background-size: cover;
+					background-size: cover;
+	});
+	
+	&-top {
+		background-color: rgba(0, 0, 0,.62);
+		padding: 14px 0;
+
+		.xs-block({
+					padding: 7px 0;
+				});		
+	}
+
+	&-inner {
+		.row-flex();
+		justify-content: space-between;
+		align-items: center;
+
+		.xs-block({
+			justify-content: center;	
+		});
+		
+	}
+
+	&__logo {
+		.col();
+		.size(9);
+		.size-sm(8);
+		.size-xs(12);
+		.sm-block({
+			margin-bottom: 10px;
+		});
+		.xs-block({
+			margin-bottom: 20px;
+		});
+	}
+
+	&__contact {
+		.col();
+		.size(3);
+		.size-sm(4);
+		.size-xs(12);
+		.sm-block({
+			text-align: center;
+		});
+	}
+}
+
+.logo {
+	font-size: 20px;
+	color: @white;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+
+	.xs-block({
+		padding-top: 5px;
+	});
+	
+	&__link {
+		margin-right: 16px;
+		.xs-block({
+			margin-right: 11px;
+		});
+		 img{
+		 	.xs-block({
+		 		width: 53px;
+		 		height: 26px;
+		 	});
+		 }
+	}
+
+	&__text {
+		.roman();	
+		font-size: 20px;
+		text-align: left;
+
+		.md-block({
+			font-size: 18px;
+		});
+		.sm-block({
+			font-size: 16px;
+		});
+
+		.xs-block({
+			font-size: 13px;
+		});
+	}
+}
+
+.contact {
+	.roman();
+	text-align: right;
+	.xs-block({
+		text-align: center;
+	});
+
+	&__num {
+		font-weight: bold;
+		 color: @white;
+		 font-size: 24px;
+		 display: inline-block;
+		 vertical-align: middle;
+		 .md-block({
+		 	font-size: 20px;
+		 });
+		 .sm-block({
+		 	margin-right: 10px;
+		 	font-size: 18px;
+		 	
+		 });
+
+		.xs-block({
+			font-size: 16px;
+		});	 
+		 
+	}
+
+	&__link {
+		color: @link-color;
+		font-size: 21px;
+		text-align: right;
+		display: inline-block;
+		vertical-align: middle;
+
+		.md-block({
+		 	font-size: 18px;
+		 });
+
+		 .sm-block({
+		 	font-size: 18px;
+		 });
+
+		.xs-block({
+			font-size: 15px;
+		});
+		
+		
+		.trs();
+
+		&:hover {
+			color: green;
+
+		}
+	}
+
+}
+

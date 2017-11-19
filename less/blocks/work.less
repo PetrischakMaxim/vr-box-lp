@@ -1,0 +1,144 @@
+.work {
+	background: @bg;
+	position: relative;
+	
+
+	&:after {
+		content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    bottom: 0;
+    transform-origin: left bottom;
+    transform: skewY(3deg);
+	}
+
+	&-title {
+		position: relative;
+		
+		font-weight: bold;
+		
+		text-align: center;
+		font-size: 35px;
+		.medium();
+		margin-bottom: 75px;
+		
+		.medium();
+		.md-block({
+			margin-bottom: 60px;
+		});
+		.sm-block({
+			margin-bottom: 40px;
+		});
+
+		.xs-block({
+			font-size: 22px;
+			margin-bottom: 20px;
+			
+		});
+
+		span {
+			position: absolute;
+			display: block;
+			width: 5%;
+			height: 5px;
+			background: @water;
+			bottom: -10px;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			transform: translateX(-50%);
+			.sm-block({
+				width: 20%;
+			});
+			
+		}
+	}
+}
+
+.work-list {
+	.row-flex();
+	justify-content: center;
+}
+
+.work-item {
+	.col();
+	.size(3);
+	.size-sm(6);
+	.sm-block({
+		margin-bottom: 20px;
+	});
+
+	img {
+		margin: 0 auto;
+		display: block;
+		
+		
+	}
+}
+
+.work-num {
+	position: relative;
+	top: -20px;
+	display: block;
+	margin: 0 auto;
+	width: 60px;
+	height: 60px;
+	background: @water;
+	border-radius: 50%;
+	color: @white;
+	font-size: 35px;
+	line-height: 60px;
+	text-align: center;
+
+	&:after {
+		position: absolute;
+		content: "";
+		display: inline-block;
+		top:5px;
+		left:5px;
+		bottom:5px;
+		right: 5px;
+		border-radius: 50%;
+		border: 3px solid @white;
+	}
+
+	//
+	/* outline: 3px solid @white;
+	outline-offset:-10px;
+	-moz-outline-radius: 50%; */
+
+	.md-block({
+		font-size: 30px;
+		width: 50px;
+	height: 50px;
+	line-height: 50px;
+	});
+	.sm-block({
+		font-size: 20px;
+		width: 40px;
+	height: 40px;
+	line-height: 40px;
+	top: -10px;
+	});
+	.xs-block({
+		font-size: 15px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+	});
+
+}
+
+
+.work-descr {
+	text-align: center;
+	font-size: 17px;
+	.xs-block({
+		font-size: 12px;
+	});
+}

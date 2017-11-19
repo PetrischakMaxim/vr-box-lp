@@ -1,0 +1,82 @@
+.facilities {
+	background: #fcfcf6;
+	background-image: url('../img/bg/facilities-cr.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-attachment: fixed;
+	.xs-block({
+		background-image: none;
+		
+	});
+
+	&-items {
+		.row-flex();
+		align-items: center;
+		
+
+		&--reverse {
+			flex-direction: row-reverse;
+		}
+	} 
+
+	&-pic {
+		.col();
+		.size(6);
+		.size-xs(10);
+		text-align: center;
+		
+	}
+
+	&-descr {
+		position: relative;
+		
+		.col();
+		.size(4);
+		.size-md(5);
+		.size-sm(6);
+		.size-xs(12);
+
+		img {
+			position: relative;
+			top: 0;
+			left: -50px;
+			position: absolute;
+
+			.sm-block({
+				position: static;
+				text-align: center;
+				margin: 0 auto;
+			});
+			
+			
+		}
+
+
+		h3 {
+			
+			margin-bottom: 20px;
+			font-size: 22px;
+
+
+
+			.md-block({
+				font-size: 20px;
+			});
+			.sm-block({
+				font-size: 17px;
+				margin-bottom: 10px;
+			});
+			.xs-block({
+				font-size: 14px;
+
+			});
+		}
+
+		p {
+			font-size: 17px;
+			.sm-block({
+				font-size: 12px;
+			});
+		}
+	}
+}

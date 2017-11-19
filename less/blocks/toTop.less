@@ -1,0 +1,36 @@
+#toTop {
+	width:100px;
+	background:@water;
+	text-align:center;
+	padding:5px;
+	position:fixed;
+	bottom:30px; 
+	right:5px;
+	border-radius: 20px;
+	display:none;
+	color: @white;
+	.medium();
+	font-size:14px;
+	.trs();
+
+	&:hover,
+	&:active {
+		.trf();
+		background: @price;
+	}
+
+	.xs-block({
+		background-color: transparent;
+		border: 2px solid @water;
+		color: @water;
+
+		&:hover,
+		&:active {
+		.trf();
+			background: transparent;
+			border-color: @price;
+			color:@price;
+		}
+
+	});
+}

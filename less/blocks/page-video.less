@@ -1,0 +1,46 @@
+.page-video {
+	background: url('../img/bg/video-bg.jpg') no-repeat center center;
+	background-size: cover;
+	text-align: center;
+	.xs-block({
+		background: url('../img/bg/video-bg-mobile.jpg') no-repeat center center;
+	background-size: cover;
+	});
+	
+
+	&__title {
+		font-size: 35px;
+		color: @white;
+		margin-bottom: 30px;
+		.xs-block({
+			font-size: 22px;
+			margin-bottom: 15px;
+		});
+	}
+
+	&__play {
+		display: block;
+		margin: auto;
+		text-align: center;
+		color:@white;
+		font-size: 22px;
+
+		.sm-block({
+			font-size: 16px;
+		});
+		
+		.xs-block({
+			font-size: 12px;
+		});
+		img {
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			.xs-block({
+				max-width: 30%;
+			});
+		}
+	}
+}
+

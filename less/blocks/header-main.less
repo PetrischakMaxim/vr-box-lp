@@ -1,0 +1,164 @@
+ .header {
+
+	&-main {
+		padding-top: @padding;
+		.clearfix();
+		.md-block({
+			padding-top: 80px;
+		});
+		.sm-block({
+			padding-top: 60px;
+		});
+		.xs-block({
+			padding-top: 40px;
+		});
+	}
+
+	&-promo {
+		.row-flex();
+		justify-content: space-between;
+		align-items: center;
+
+	}
+
+	&-main__text {
+		.col();
+		.size(12);
+		.xs-block({
+			margin-bottom: 15px;
+		});
+	}
+
+	&-main__right {
+		.col();
+		.size(5);
+		.size-xs(6);
+		align-self: flex-start;
+	}
+
+	&-main__left {
+		.col();
+		.size(6);
+	}
+
+	
+
+	&__title {
+		font-size: 39px;
+		text-shadow: 0 3px 0 #272b25;
+		font-weight: bold;
+		margin-bottom: 14px;
+		color: @white;
+		.size(8);
+		.size-sm(12);
+		.md-block({
+			font-size: 30px;
+			margin-bottom: 10px;
+		});
+		.sm-block({
+			margin-bottom: 8px;
+			font-size: 24px;
+		});
+
+		.xs-block({
+			font-size: 16px;
+			text-align:left;
+			margin-bottom: 0;			
+		});
+	}
+
+	&__slogan {
+		flex-basis: 100%;
+		font-size: 30px;
+		color: @white;
+		margin-bottom: 26px;
+		.md-block({
+			font-size: 26px;
+		});
+
+		.sm-block({
+			font-size: 22px;
+		});
+		.xs-block({
+			font-size: 17px;
+			margin-bottom: 20px;
+		});
+	}
+
+
+	&__btn {
+		color: @white;
+		text-transform: uppercase;
+		cursor: pointer;
+		padding: 19px 44px;
+		background: @link-color;
+		display: inline-block;
+		border-radius: 3px;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 1.333;
+		text-align: center;		
+		text-shadow: 0 1px 2px #578f22;
+		.trs();
+
+		.md-block({
+			padding: 18px 40px;
+			font-size: 16px;
+		});
+
+		.sm-block({
+			padding: 16px 34px;
+			font-size: 14px;
+		});
+
+		.xs-block({
+			padding: 12px 34px;
+			font-size: 11px;		
+		});
+
+
+		&:hover {
+			background: green;
+			text-shadow: 0 5px 5px #578f22;
+			.trf();
+		}
+	}
+
+
+}
+
+
+.btn {
+	color: @white;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-shadow: 0 1px 2px #578f22;
+	line-height: 1.333;
+	text-align: center;
+		background: @link-color;
+		display: inline-block;
+		border-radius: 3px;
+		padding: 19px 44px;
+		.trs();
+
+		&:hover {
+			background: green;
+			text-shadow: 0 5px 5px #578f22;
+			.trf();
+		}
+
+		.md-block({
+			padding: 18px 40px;
+			font-size: 16px;
+		});
+
+		.sm-block({
+			padding: 16px 34px;
+			font-size: 14px;
+		});
+
+		.xs-block({
+			padding: 12px 34px;
+			font-size: 11px;		
+		});
+}
